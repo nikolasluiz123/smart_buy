@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_buy/ui/screens/login_page.dart';
 import 'package:smart_buy/ui/screens/splash_page.dart';
 
 void main() {
@@ -19,20 +20,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashPage(),
-        '/home': (context) => const HomePage(),
+        '/login': (context) => const LoginPage(),
       },
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Página Principal')),
-      body: const Center(child: Text('Bem-vindo!')),
     );
   }
 }

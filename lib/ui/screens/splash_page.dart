@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
 
   void _initializeApp() {
     if (mounted) {
-      Navigator.of(context).pushReplacementNamed('/home');
+      Navigator.of(context).pushReplacementNamed('/login');
     }
   }
 
