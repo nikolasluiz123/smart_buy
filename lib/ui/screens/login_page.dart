@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../constants/icons.dart';
+import '../../constants/images.dart';
+import '../../l10n/app_localizations.dart';
+
 const Color _kSmartBuyBlue = Color(0xFF5CC1E0);
 const Color _kMediumGrayText = Color(0xFF5F6368);
 const Color _kDarkText = Color(0xFF1A1A2E);
@@ -77,6 +81,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
       backgroundColor: Color(0xFFF5F7FA),
       body: SafeArea(
@@ -85,9 +91,9 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              _buildTopSection(),
+              _buildTopSection(l10n),
               const SizedBox(height: 32.0),
-              _buildLoginFormCard(),
+              _buildLoginFormCard(l10n),
             ],
           ),
         ),
@@ -95,24 +101,24 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildTopSection() {
+  Widget _buildTopSection(AppLocalizations l10n) {
     return Column(
       children: [
-        Image.asset('assets/images/logo_smart_buy.png', width: 140, height: 140),
-        const Text(
-          'Smart Buy',
-          style: TextStyle(color: _kSmartBuyBlue, fontSize: 24, fontWeight: FontWeight.w400),
+        Image.asset(appLogo, width: 140, height: 140),
+        Text(
+          l10n.smartBuy,
+          style: const TextStyle(color: _kSmartBuyBlue, fontSize: 24, fontWeight: FontWeight.w400),
         ),
         const SizedBox(height: 8.0),
-        const Text(
-          'Bem-vindo de volta!',
-          style: TextStyle(color: _kMediumGrayText, fontSize: 16, fontWeight: FontWeight.w400),
+        Text(
+          l10n.welcomeBack,
+          style: const TextStyle(color: _kMediumGrayText, fontSize: 16, fontWeight: FontWeight.w400),
         ),
       ],
     );
   }
 
-  Widget _buildLoginFormCard() {
+  Widget _buildLoginFormCard(AppLocalizations l10n) {
     return Card(
       elevation: 4.0,
       shadowColor: Colors.black.withValues(alpha: 0.5),
@@ -125,24 +131,24 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Text(
-                'Entrar',
+              Text(
+                l10n.loginButton,
                 style: TextStyle(color: _kDarkText, fontSize: 16, fontWeight: FontWeight.w400),
               ),
               const SizedBox(height: 8.0),
-              const Text(
-                'Digite suas credenciais para acessar sua conta',
+              Text(
+                l10n.signInPrompt,
                 style: TextStyle(color: _kMediumGrayText, fontSize: 16, fontWeight: FontWeight.w400),
               ),
               const SizedBox(height: 24.0),
               TextFormField(
                 controller: _emailController,
                 decoration: _buildInputDecoration(
-                  hint: 'E-mail',
+                  hint: l10n.emailHint,
                   icon: Padding(
                     padding: const EdgeInsets.all(14.0),
                     child: SvgPicture.asset(
-                      'assets/icons/ic_email.svg',
+                      iconEmail,
                       width: 20,
                       height: 20,
                     ),
@@ -151,10 +157,10 @@ class _LoginPageState extends State<LoginPage> {
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Por favor, digite seu e-mail';
+                    return l10n.emailEmpty;
                   }
                   if (!value.contains('@')) {
-                    return 'Por favor, digite um e-mail válido';
+                    return l10n.emailInvalid;
                   }
                   return null;
                 },
@@ -164,11 +170,11 @@ class _LoginPageState extends State<LoginPage> {
                 controller: _passwordController,
                 obscureText: true,
                 decoration: _buildInputDecoration(
-                  hint: 'Senha',
+                  hint: l10n.passwordHint,
                   icon: Padding(
                     padding: const EdgeInsets.all(14.0),
                     child: SvgPicture.asset(
-                      'assets/icons/ic_padlock.svg',
+                      iconPadLock,
                       width: 20,
                       height: 20,
                     ),
@@ -176,10 +182,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Por favor, digite sua senha';
+                    return l10n.passwordEmpty;
                   }
                   if (value.length < 6) {
-                    return 'A senha deve ter pelo menos 6 caracteres';
+                    return l10n.weakPassword;
                   }
                   return null;
                 },
@@ -193,10 +199,10 @@ class _LoginPageState extends State<LoginPage> {
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
                 ),
-                child: const Text('Entrar', style: TextStyle(fontSize: 16)),
+                child: Text(l10n.loginButton, style: TextStyle(fontSize: 16)),
               ),
               const SizedBox(height: 24.0),
-              _buildOrDivider(),
+              _buildOrDivider(l10n),
               const SizedBox(height: 24.0),
               OutlinedButton(
                 onPressed: _onGoogleLoginPressed,
@@ -210,19 +216,19 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset(
-                      'assets/icons/ic_google.svg',
+                      iconGoogle,
                       width: 16,
                       height: 16,
                     ),
                     const SizedBox(width: 12.0),
-                    const Text(
-                      'Continuar com Google',
+                    Text(
+                      l10n.googleButton,
                       style: TextStyle(color: Color(0xFF3F4246), fontSize: 14, fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),
               ),
-              _buildBottomSection()
+              _buildBottomSection(l10n)
             ],
           ),
         ),
@@ -230,27 +236,27 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildBottomSection() {
+  Widget _buildBottomSection(AppLocalizations l10n) {
     return Column(
       children: [
         TextButton(
           onPressed: _onForgotPasswordPressed,
-          child: const Text(
-            'Esqueceu sua senha?',
+          child: Text(
+            l10n.forgotPassword,
             style: TextStyle(color: _kMediumGrayText, fontSize: 14, fontWeight: FontWeight.w400),
           ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Não tem uma conta?',
+            Text(
+              l10n.noAccount,
               style: TextStyle(color: _kMediumGrayText, fontSize: 16, fontWeight: FontWeight.w400),
             ),
             TextButton(
               onPressed: _onSignUpPressed,
-              child: const Text(
-                'Cadastre-se',
+              child: Text(
+                l10n.signUp,
                 style: TextStyle(color: _kSignUpLink, fontSize: 14, fontWeight: FontWeight.w400),
               ),
             ),
@@ -275,13 +281,13 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildOrDivider() {
+  Widget _buildOrDivider(AppLocalizations l10n) {
     return Row(
       children: [
         const Expanded(child: Divider(color: _kGoogleButtonBorder)),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Text('ou', style: TextStyle(color: _kMediumGrayText.withOpacity(0.8), fontSize: 14)),
+          child: Text(l10n.orDivider, style: TextStyle(color: _kMediumGrayText.withValues(alpha: 0.8), fontSize: 14)),
         ),
         const Expanded(child: Divider(color: _kGoogleButtonBorder)),
       ],

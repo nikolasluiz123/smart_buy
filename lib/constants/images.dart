@@ -1,0 +1,1 @@
+const String appLogo = 'assets/images/logo_smart_buy.png';

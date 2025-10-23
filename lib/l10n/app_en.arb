@@ -1,0 +1,19 @@
+{
+  "@@locale": "en",
+  "loginPageTitle": "Sign In",
+  "smartBuy": "Smart Buy",
+  "welcomeBack": "Welcome back!",
+  "signInPrompt": "Enter your credentials to access your account",
+  "emailHint": "Email",
+  "passwordHint": "Password",
+  "loginButton": "Sign In",
+  "orDivider": "or",
+  "googleButton": "Continue with Google",
+  "forgotPassword": "Forgot your password?",
+  "noAccount": "Don't have an account?",
+  "signUp": "Sign up",
+  "passwordEmpty": "Please, write your password",
+  "weakPassword": "Password must be at least 6 characters long",
+  "emailEmpty": "Please, write your e-mail",
+  "emailInvalid": "Please enter a valid email address"
+}

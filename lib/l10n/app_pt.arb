@@ -1,0 +1,19 @@
+{
+  "@@locale": "pt",
+  "loginPageTitle": "Entrar",
+  "smartBuy": "Smart Buy",
+  "welcomeBack": "Bem-vindo de volta!",
+  "signInPrompt": "Digite suas credenciais para acessar sua conta",
+  "emailHint": "E-mail",
+  "passwordHint": "Senha",
+  "loginButton": "Entrar",
+  "orDivider": "ou",
+  "googleButton": "Continuar com Google",
+  "forgotPassword": "Esqueceu sua senha?",
+  "noAccount": "Não tem uma conta?",
+  "signUp": "Cadastre-se",
+  "passwordEmpty": "Por favor, digite sua senha",
+  "weakPassword": "A senha deve ter pelo menos 6 caracteres",
+  "emailEmpty": "Por favor, digite seu e-mail",
+  "emailInvalid": "Por favor, digite um e-mail válido"
+}
