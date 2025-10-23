@@ -1,0 +1,47 @@
+name: smart_buy
+description: "Projeto Web e Mobile para facilitar as compras no mercado"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  bloc: ^9.1.0
+  flutter_bloc: ^9.1.1
+  flutter_native_splash: ^2.4.7
+  flutter_launcher_icons: ^0.14.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/logo_smart_buy.png
+    - assets/images/logo_smart_buy_splash.png
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/logo_smart_buy_splash.png
+  android_12:
+    image: assets/images/logo_smart_buy_splash.png
+    icon_background_color: "#FFFFFF"
+    image_dark: assets/images/logo_smart_buy_splash.png
+  android: true
+  ios: true
+  web: false
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo_smart_buy.png"
