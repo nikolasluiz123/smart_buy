@@ -15,5 +15,8 @@
   "passwordEmpty": "Please, write your password",
   "weakPassword": "Password must be at least 6 characters long",
   "emailEmpty": "Please, write your e-mail",
-  "emailInvalid": "Please enter a valid email address"
+  "emailInvalid": "Please enter a valid email address",
+  "genericError": "An unexpected error occurred",
+  "tryAgain": "Try Again",
+  "back": "Back"
 }

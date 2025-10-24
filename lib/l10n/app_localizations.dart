@@ -193,6 +193,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please enter a valid email address'**
   String get emailInvalid;
+
+  /// No description provided for @genericError.
+  ///
+  /// In en, this message translates to:
+  /// **'An unexpected error occurred'**
+  String get genericError;
+
+  /// No description provided for @tryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try Again'**
+  String get tryAgain;
+
+  /// No description provided for @back.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
 }
 
 class _AppLocalizationsDelegate

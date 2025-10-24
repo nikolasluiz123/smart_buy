@@ -55,4 +55,13 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get emailInvalid => 'Por favor, digite um e-mail válido';
+
+  @override
+  String get genericError => 'Ocorreu um erro inesperado';
+
+  @override
+  String get tryAgain => 'Tentar Novamente';
+
+  @override
+  String get back => 'Voltar';
 }

@@ -15,5 +15,8 @@
   "passwordEmpty": "Por favor, digite sua senha",
   "weakPassword": "A senha deve ter pelo menos 6 caracteres",
   "emailEmpty": "Por favor, digite seu e-mail",
-  "emailInvalid": "Por favor, digite um e-mail válido"
+  "emailInvalid": "Por favor, digite um e-mail válido",
+  "genericError": "Ocorreu um erro inesperado",
+  "tryAgain": "Tentar Novamente",
+  "back": "Voltar"
 }
