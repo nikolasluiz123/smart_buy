@@ -146,11 +146,11 @@ abstract class AppLocalizations {
   /// **'or'**
   String get orDivider;
 
-  /// No description provided for @googleButton.
+  /// No description provided for @loginGoogleButton.
   ///
   /// In en, this message translates to:
   /// **'Continue with Google'**
-  String get googleButton;
+  String get loginGoogleButton;
 
   /// No description provided for @forgotPassword.
   ///
@@ -211,6 +211,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back'**
   String get back;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get register;
+
+  /// No description provided for @registerMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill in the details below to create your account'**
+  String get registerMessage;
+
+  /// No description provided for @nameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name'**
+  String get nameHint;
+
+  /// No description provided for @createAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get createAccount;
+
+  /// No description provided for @registerGoogleButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Register with Google'**
+  String get registerGoogleButton;
+
+  /// No description provided for @existingAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get existingAccount;
 }
 
 class _AppLocalizationsDelegate

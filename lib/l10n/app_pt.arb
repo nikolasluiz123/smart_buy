@@ -8,7 +8,7 @@
   "passwordHint": "Senha",
   "loginButton": "Entrar",
   "orDivider": "ou",
-  "googleButton": "Continuar com Google",
+  "loginGoogleButton": "Continuar com Google",
   "forgotPassword": "Esqueceu sua senha?",
   "noAccount": "Não tem uma conta?",
   "signUp": "Cadastre-se",
@@ -18,5 +18,11 @@
   "emailInvalid": "Por favor, digite um e-mail válido",
   "genericError": "Ocorreu um erro inesperado",
   "tryAgain": "Tentar Novamente",
-  "back": "Voltar"
+  "back": "Voltar",
+  "register": "Cadastrar",
+  "registerMessage": "Preencha os dados abaixo para criar sua conta",
+  "nameHint": "Nome completo",
+  "createAccount": "Criar a Conta",
+  "registerGoogleButton": "Cadastrar com Google",
+  "existingAccount": "Já tem uma conta?"
 }

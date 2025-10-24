@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../../l10n/app_localizations.dart';
+import '../../../components/decorated_input.dart';
+
+class NameField extends DecoratedInput {
+  final TextEditingController controller;
+  final String icon;
+
+  const NameField({super.key, required this.controller, required this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
+    return TextFormField(
+      controller: controller,
+      decoration: buildInputDecoration(
+        context,
+        hint: l10n.nameHint,
+        icon: Padding(
+          padding: const EdgeInsets.all(14.0),
+          child: SvgPicture.asset(
+            icon,
+            width: 20,
+            height: 20,
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.onSurfaceVariant,
+              BlendMode.srcIn,
+            ),
+          ),
+        ),
+      ),
+      keyboardType: TextInputType.name,
+    );
+  }
+}

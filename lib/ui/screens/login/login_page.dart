@@ -8,8 +8,8 @@ import 'package:smart_buy/ui/screens/login/components/email_field.dart';
 
 import '../../../constants/icons.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../components/button.dart';
 import '../../components/labeled_horizontal_divider.dart';
-import 'components/login_button.dart';
 import 'components/login_card.dart';
 import 'components/logo_login.dart';
 import 'components/password_field.dart';
@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _onSignUpPressed() {
-    debugPrint('Sign Up pressed');
+    Navigator.of(context).pushNamed('/user/register');
   }
 
   @override
@@ -125,11 +125,11 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 16.0),
                     PasswordField(controller: _passwordController, icon: iconPadLock),
                     const SizedBox(height: 24.0),
-                    LoginButton(onLoginPressed: _onLoginPressed),
+                    PrimaryButton(label: l10n.loginButton, onPressed: _onLoginPressed),
                     const SizedBox(height: 24.0),
                     LabeledHorizontalDivider(label: l10n.orDivider),
                     const SizedBox(height: 24.0),
-                    GoogleLoginButton(label: l10n.googleButton, onGoogleLoginPressed: _onGoogleLoginPressed),
+                    GoogleLoginButton(label: l10n.loginGoogleButton, onGoogleLoginPressed: _onGoogleLoginPressed),
                     const SizedBox(height: 12.0),
                     Column(
                       children: [

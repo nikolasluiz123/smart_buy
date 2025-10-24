@@ -8,7 +8,7 @@
   "passwordHint": "Password",
   "loginButton": "Sign In",
   "orDivider": "or",
-  "googleButton": "Continue with Google",
+  "loginGoogleButton": "Continue with Google",
   "forgotPassword": "Forgot your password?",
   "noAccount": "Don't have an account?",
   "signUp": "Sign up",
@@ -18,5 +18,11 @@
   "emailInvalid": "Please enter a valid email address",
   "genericError": "An unexpected error occurred",
   "tryAgain": "Try Again",
-  "back": "Back"
+  "back": "Back",
+  "register": "Register",
+  "registerMessage": "Fill in the details below to create your account",
+  "nameHint": "Full name",
+  "createAccount": "Create Account",
+  "registerGoogleButton": "Register with Google",
+  "existingAccount": "Already have an account?"
 }

@@ -33,7 +33,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get orDivider => 'or';
 
   @override
-  String get googleButton => 'Continue with Google';
+  String get loginGoogleButton => 'Continue with Google';
 
   @override
   String get forgotPassword => 'Forgot your password?';
@@ -64,4 +64,23 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get back => 'Back';
+
+  @override
+  String get register => 'Register';
+
+  @override
+  String get registerMessage =>
+      'Fill in the details below to create your account';
+
+  @override
+  String get nameHint => 'Full name';
+
+  @override
+  String get createAccount => 'Create Account';
+
+  @override
+  String get registerGoogleButton => 'Register with Google';
+
+  @override
+  String get existingAccount => 'Already have an account?';
 }

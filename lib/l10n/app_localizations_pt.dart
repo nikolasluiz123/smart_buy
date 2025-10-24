@@ -33,7 +33,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get orDivider => 'ou';
 
   @override
-  String get googleButton => 'Continuar com Google';
+  String get loginGoogleButton => 'Continuar com Google';
 
   @override
   String get forgotPassword => 'Esqueceu sua senha?';
@@ -64,4 +64,22 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get back => 'Voltar';
+
+  @override
+  String get register => 'Cadastrar';
+
+  @override
+  String get registerMessage => 'Preencha os dados abaixo para criar sua conta';
+
+  @override
+  String get nameHint => 'Nome completo';
+
+  @override
+  String get createAccount => 'Criar a Conta';
+
+  @override
+  String get registerGoogleButton => 'Cadastrar com Google';
+
+  @override
+  String get existingAccount => 'Já tem uma conta?';
 }
