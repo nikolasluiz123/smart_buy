@@ -6,11 +6,13 @@ class LoginCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Card(
       elevation: 4.0,
-      shadowColor: Colors.black.withValues(alpha: 0.5),
+      shadowColor: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.1),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
-      color: Color(0xFFFFFFFF),
+      color: theme.colorScheme.surfaceContainerHighest,
       child: Padding(padding: const EdgeInsets.all(24.0), child: child),
     );
   }

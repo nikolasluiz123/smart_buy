@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 
-import '../theme/colors.dart';
+import '../theme/theme.dart';
 
 abstract class DecoratedInput extends StatelessWidget {
   const DecoratedInput({super.key});
 
-  InputDecoration buildInputDecoration({required String hint, required Widget icon}) {
+  InputDecoration buildInputDecoration(BuildContext context, {required String hint, required Widget icon}) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final appColors = theme.extension<AppColors>()!;
+
     return InputDecoration(
       prefixIcon: icon,
       hintText: hint,
-      hintStyle: const TextStyle(color: kMediumGrayText),
+      hintStyle: TextStyle(color: colorScheme.onSurfaceVariant),
       filled: true,
-      fillColor: kFieldBackground,
+      fillColor: appColors.fieldBackground,
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0), borderSide: BorderSide.none),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
-        borderSide: const BorderSide(color: kSmartBuyBlue),
+        borderSide: BorderSide(color: colorScheme.primary),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:smart_buy/constants/images.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -26,9 +27,9 @@ class _SplashPageState extends State<SplashPage> {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFFFF),
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Center(
-        child: Image.asset('assets/images/logo_smart_buy_splash.png'),
+        child: Image.asset(appLogoSplash),
       ),
     );
   }

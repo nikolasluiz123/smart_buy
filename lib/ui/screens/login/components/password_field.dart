@@ -18,10 +18,19 @@ class PasswordField extends DecoratedInput {
       controller: controller,
       obscureText: true,
       decoration: buildInputDecoration(
+        context,
         hint: l10n.passwordHint,
         icon: Padding(
           padding: const EdgeInsets.all(14.0),
-          child: SvgPicture.asset(icon, width: 20, height: 20),
+          child: SvgPicture.asset(
+            icon,
+            width: 20,
+            height: 20,
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.onSurfaceVariant,
+              BlendMode.srcIn,
+            ),
+          ),
         ),
       ),
       validator: (value) {

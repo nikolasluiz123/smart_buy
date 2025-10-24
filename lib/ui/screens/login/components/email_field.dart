@@ -17,10 +17,19 @@ class EmailField extends DecoratedInput {
     return TextFormField(
       controller: controller,
       decoration: buildInputDecoration(
+        context,
         hint: l10n.emailHint,
         icon: Padding(
           padding: const EdgeInsets.all(14.0),
-          child: SvgPicture.asset(icon, width: 20, height: 20),
+          child: SvgPicture.asset(
+            icon,
+            width: 20,
+            height: 20,
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.onSurfaceVariant,
+              BlendMode.srcIn,
+            ),
+          ),
         ),
       ),
       keyboardType: TextInputType.emailAddress,

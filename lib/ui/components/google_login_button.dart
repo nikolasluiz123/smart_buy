@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../constants/icons.dart';
-import '../theme/colors.dart';
 
 class GoogleLoginButton extends StatelessWidget {
   final String label;
   final VoidCallback onGoogleLoginPressed;
-  const GoogleLoginButton({super.key, required this.label, required this.onGoogleLoginPressed});
+  const GoogleLoginButton(
+      {super.key, required this.label, required this.onGoogleLoginPressed});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return OutlinedButton(
       onPressed: onGoogleLoginPressed,
       style: OutlinedButton.styleFrom(
-        backgroundColor: kGoogleButtonBg,
-        side: const BorderSide(color: kGoogleButtonBorder),
+        backgroundColor: theme.colorScheme.surfaceContainerHighest,
+        side: BorderSide(color: theme.colorScheme.onSurfaceVariant),
         padding: const EdgeInsets.symmetric(vertical: 14.0),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
       ),
@@ -26,7 +28,10 @@ class GoogleLoginButton extends StatelessWidget {
           const SizedBox(width: 12.0),
           Text(
             label,
-            style: TextStyle(color: Color(0xFF3F4246), fontSize: 14, fontWeight: FontWeight.w400),
+            style: TextStyle(
+                color: theme.colorScheme.onSurface,
+                fontSize: 14,
+                fontWeight: FontWeight.w400),
           ),
         ],
       ),

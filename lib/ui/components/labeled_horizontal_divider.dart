@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
 
-import '../theme/colors.dart';
+import '../theme/theme.dart';
 
 class LabeledHorizontalDivider extends StatelessWidget {
   final String label;
+
   const LabeledHorizontalDivider({super.key, required this.label});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Row(
       children: [
-        const Expanded(child: Divider(color: kGoogleButtonBorder)),
+        Expanded(child: Divider(color: theme.colorScheme.onSurfaceVariant)),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Text(label, style: TextStyle(color: kMediumGrayText.withValues(alpha: 0.8), fontSize: 14)),
+          child: Text(
+            label,
+            style: TextStyle(color: theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.8), fontSize: 14),
+          ),
         ),
-        const Expanded(child: Divider(color: kGoogleButtonBorder)),
+        Expanded(child: Divider(color: theme.colorScheme.onSurfaceVariant)),
       ],
     );
   }

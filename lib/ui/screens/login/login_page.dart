@@ -5,7 +5,6 @@ import 'package:smart_buy/ui/screens/login/components/email_field.dart';
 import '../../../constants/icons.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../components/labeled_horizontal_divider.dart';
-import '../../theme/colors.dart';
 import 'components/login_button.dart';
 import 'components/login_card.dart';
 import 'components/logo_login.dart';
@@ -80,9 +79,11 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+    final colorScheme = theme.colorScheme;
 
     return Scaffold(
-      backgroundColor: Color(0xFFF5F7FA),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -103,12 +104,12 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             Text(
                               l10n.loginButton,
-                              style: TextStyle(color: kDarkText, fontSize: 16, fontWeight: FontWeight.w400),
+                              style: textTheme.titleMedium?.copyWith(color: colorScheme.onSurface),
                             ),
                             const SizedBox(height: 8.0),
                             Text(
                               l10n.signInPrompt,
-                              style: TextStyle(color: kMediumGrayText, fontSize: 16, fontWeight: FontWeight.w400),
+                              style: textTheme.bodySmall?.copyWith(color: colorScheme.onSurfaceVariant),
                             ),
                             const SizedBox(height: 24.0),
                             EmailField(controller: _emailController, icon: iconEmail),
@@ -120,14 +121,14 @@ class _LoginPageState extends State<LoginPage> {
                             LabeledHorizontalDivider(label: l10n.orDivider),
                             const SizedBox(height: 24.0),
                             GoogleLoginButton(label: l10n.googleButton, onGoogleLoginPressed: _onGoogleLoginPressed),
-                            const SizedBox(height: 24.0),
+                            const SizedBox(height: 12.0),
                             Column(
                               children: [
                                 TextButton(
                                   onPressed: _onForgotPasswordPressed,
                                   child: Text(
                                     l10n.forgotPassword,
-                                    style: TextStyle(color: kMediumGrayText, fontSize: 14, fontWeight: FontWeight.w400),
+                                    style: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurfaceVariant),
                                   ),
                                 ),
                                 Row(
@@ -135,13 +136,16 @@ class _LoginPageState extends State<LoginPage> {
                                   children: [
                                     Text(
                                       l10n.noAccount,
-                                      style: TextStyle(color: kMediumGrayText, fontSize: 16, fontWeight: FontWeight.w400),
+                                      style: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurfaceVariant),
                                     ),
                                     TextButton(
                                       onPressed: _onSignUpPressed,
                                       child: Text(
                                         l10n.signUp,
-                                        style: TextStyle(color: kSignUpLink, fontSize: 14, fontWeight: FontWeight.w400),
+                                        style: textTheme.bodyMedium?.copyWith(
+                                          color: colorScheme.primary,
+                                          fontWeight: FontWeight.w400,
+                                        ),
                                       ),
                                     ),
                                   ],
