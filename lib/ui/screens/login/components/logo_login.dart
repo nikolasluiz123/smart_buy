@@ -17,7 +17,7 @@ class LogoLogin extends StatelessWidget {
 
     return Column(
       children: [
-        Image.asset(appLogo, width: 140, height: 140),
+        Image.asset(appLogo, width: 140, height: 140, filterQuality: FilterQuality.high),
         Text(
           l10n.smartBuy,
           style: textTheme.headlineSmall?.copyWith(

@@ -32,11 +32,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/logo_smart_buy.png
-    - assets/images/logo_smart_buy_splash.png
-    - assets/icons/ic_email.svg
-    - assets/icons/ic_padlock.svg
-    - assets/icons/ic_google.svg
+    - assets/images/
+    - assets/icons/
 
 flutter_native_splash:
   color: "#FFFFFF"
