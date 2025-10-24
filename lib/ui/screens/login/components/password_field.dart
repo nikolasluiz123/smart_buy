@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../../l10n/app_localizations.dart';
+import '../../../components/decorated_input.dart';
+
+class PasswordField extends DecoratedInput {
+  final TextEditingController controller;
+  final String icon;
+
+  const PasswordField({super.key, required this.controller, required this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
+    return TextFormField(
+      controller: controller,
+      obscureText: true,
+      decoration: buildInputDecoration(
+        hint: l10n.passwordHint,
+        icon: Padding(
+          padding: const EdgeInsets.all(14.0),
+          child: SvgPicture.asset(icon, width: 20, height: 20),
+        ),
+      ),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return l10n.passwordEmpty;
+        }
+        if (value.length < 6) {
+          return l10n.weakPassword;
+        }
+        return null;
+      },
+    );
+  }
+}

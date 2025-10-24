@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_buy/ui/screens/login_page.dart';
+import 'package:smart_buy/ui/screens/login/login_page.dart';
 import 'package:smart_buy/ui/screens/splash_page.dart';
 
 import 'l10n/app_localizations.dart';
